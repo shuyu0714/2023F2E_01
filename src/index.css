@@ -19,14 +19,12 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #000;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  transition: all .2s ease-in-out;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
@@ -34,7 +32,7 @@ body {
   min-height: 100vh;
   line-height: theme('lineHeight.6');
   width: 100%;
-}
+} */
 
 h1 {
   font-size: 3.2em;
@@ -70,5 +68,26 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-medium leading-normal;
+  }
+  .btn {
+    @apply font-bold text-black hover:text-inherit;
+  }
+  .btn-lg {
+    @apply px-4 py-8 bg-primary-3 hover:bg-primary-4 border-spacing-4;
+  }
+  .btn-sm {
+    @apply px-4 py-2 bg-primary-3 hover:bg-primary-4 rounded-[48px];
+  }
+}
+
+@layer components {
+  nav {
+    @apply flex justify-between items-center py-4;
   }
 }
