@@ -18,6 +18,10 @@ export default {
       'body': '16px'
     },
     extend: {
+      spacing: {
+        '0': '4px',
+        '7': '64px'
+      },
       colors: {
         'primary': {
           1: '#FBFFE1',
