@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo/logo.svg";
-import { HandCoins } from "@phosphor-icons/react";
+import { HandCoins, FacebookLogo, YoutubeLogo, InstagramLogo } from "@phosphor-icons/react";
 import { List } from "@phosphor-icons/react/dist/ssr";
 
 const Navbar = () => {
@@ -55,16 +55,16 @@ const Navbar = () => {
           </div>
           <ul className="hidden lg:flex justify-center gap-4">
             {[
-              ["facebook", "logo-facebook.svg", "#"],
-              ["instagram", "logo-instagram.svg", "#"],
-              ["youtube", "logo-youtube.svg", "#"],
-            ].map(([title, src, link], index) => (
-              <li key={index}>
+              ["facebook", <FacebookLogo size={32} />, "#"],
+              ["instagram", <YoutubeLogo size={32} />, "#"],
+              ["youtube", <InstagramLogo size={32} />, "#"],
+            ].map((i) => (
+              <li key={i[0]}>
                 <a
-                  href={link}
+                  href={i[2]}
                   className="text-black font-bold hover:text-primary-5"
                 >
-                  <img src={`src/assets/logo/${src}`} alt={title} />
+                  {i[1]}
                 </a>
               </li>
             ))}
@@ -81,7 +81,7 @@ const Navbar = () => {
       <div
         className={
           "lg:hidden fixed left-0 inset-y-0 w-2/5 bg-white bg-opacity-30 backdrop-blur-sm z-50 " +
-          (showSidebar ? "" : "translate-x-full")
+          (showSidebar ? "" : "translate-x-[250%]")
         }
         onClick={() => setShowSidebar(false)}
       ></div>
@@ -121,17 +121,16 @@ const Navbar = () => {
         </div>
         <ul className="lg:hidden pt-4 border-t border-grayScale-1">
           {[
-            ["facebook", "logo-facebook.svg", "#"],
-            ["instagram", "logo-instagram.svg", "#"],
-            ["youtube", "logo-youtube.svg", "#"],
-          ].map(([title, src, link], index) => (
-            <li key={index} className="mb-4">
+            ["facebook", <FacebookLogo size={32} />, "#"],
+            ["instagram", <YoutubeLogo size={32} />, "#"],
+            ["youtube", <InstagramLogo size={32} />, "#"],
+          ].map((i) => (
+            <li key={i[0]} className="mb-4">
               <a
-                href={link}
+                href={i[2]}
                 className="text-black font-bold hover:text-primary-5 flex items-center capitalize"
               >
-                <img src={`src/assets/logo/${src}`} alt={title} />
-                {title}
+                {i[1]}{i[0]}
               </a>
             </li>
           ))}
