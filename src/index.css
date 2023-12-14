@@ -40,22 +40,7 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
@@ -72,9 +57,15 @@ button:focus-visible {
 }
 
 @layer base {
+  :root {
+    @apply px-4 md:px-7
+  }
   body {
     @apply font-medium leading-normal;
   }
+}
+
+@layer components {
   .btn {
     @apply font-bold text-black hover:text-inherit;
   }
@@ -84,10 +75,7 @@ button:focus-visible {
   .btn-sm {
     @apply px-4 py-2 bg-primary-3 hover:bg-primary-4 rounded-[48px];
   }
-}
-
-@layer components {
-  nav {
+  .nav {
     @apply flex justify-between items-center py-4;
   }
 }

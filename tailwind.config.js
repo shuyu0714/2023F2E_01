@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       spacing: {
-        '0': '4px',
+        // '0': '4px',
         '7': '64px'
       },
       colors: {
