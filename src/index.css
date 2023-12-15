@@ -35,8 +35,9 @@ a {
 } */
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: clamp(180px, 20.3125vw, 260px);
+  line-height: 1.25;
+  letter-spacing: clamp(5px, 1.0156vw, 13px);
 }
 
 button {
@@ -58,10 +59,10 @@ button {
 
 @layer base {
   :root {
-    @apply px-4 md:px-7
+    @apply px-4 md:px-0 w-[90%] max-w-7xl mx-auto
   }
   body {
-    @apply font-medium leading-normal;
+    @apply font-bold leading-normal;
   }
 }
 
@@ -77,5 +78,8 @@ button {
   }
   .nav {
     @apply flex justify-between items-center py-4;
+  }
+  .hero-vote-number {
+    @apply top-1/2 -translate-y-1/2 -mt-4
   }
 }
