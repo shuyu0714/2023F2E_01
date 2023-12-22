@@ -9,7 +9,6 @@ export default {
       serif: ['"Noto Serif TC"'],
     },
     fontSize: {
-      'head': '48px',
       'title': {
         1: '28px',
         2: '24px'

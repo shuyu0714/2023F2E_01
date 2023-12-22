@@ -99,7 +99,7 @@ const Navbar = () => {
         <div className="lg:hidden text-left">
           <a href="#donation" className="inline-flex btn btn-sm mb-4">
             <HandCoins size={24} />
-            小額捐款
+            <span className="ml-2">小額捐款</span>
           </a>
           <ul className=" flex flex-col text-left">
             {[
@@ -130,7 +130,7 @@ const Navbar = () => {
                 href={i[2]}
                 className="text-black font-bold hover:text-primary-5 flex items-center capitalize"
               >
-                {i[1]}{i[0]}
+                {i[1]}<span className="ml-1">{i[0]}</span>
               </a>
             </li>
           ))}

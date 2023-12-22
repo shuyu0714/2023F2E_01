@@ -34,10 +34,42 @@ a {
   width: 100%;
 } */
 
-h1 {
-  font-size: clamp(180px, 20.3125vw, 260px);
-  line-height: 1.25;
-  letter-spacing: clamp(5px, 1.0156vw, 13px);
+h1 { 
+  font-size: 21.33334vw;
+  line-height: 1.5;
+  letter-spacing: .8vw;
+}
+.text-head {
+  font-size: 6.4vw;
+}
+.candidate-img {
+  width: 81.333%;
+  height: auto;
+  margin: auto;
+}
+
+@media screen(md) {
+  h1 {
+    font-size: clamp(156px, 20.3125vw, 260px);
+    line-height: 1.25;
+    letter-spacing: clamp(5px, 1.0156vw, 13px);
+  }
+  .text-head {
+    font-size: 3.75vw;
+  }
+  .candidate-img {
+    width: 28.203vw;
+    height: auto;
+  }
+}
+@media screen(xl) {
+  .text-head {
+    font-size: 48px;
+  }
+  .candidate-img {
+    width: 361px;
+    height: auto;
+  }
 }
 
 button {
@@ -59,10 +91,15 @@ button {
 
 @layer base {
   :root {
-    @apply px-4 md:px-0 w-[90%] max-w-7xl mx-auto
+    @apply px-4 md:px-0 max-w-7xl mx-auto;
+  }
+  @media screen(md) {
+    :root {
+      @apply w-[90%];
+    }
   }
   body {
-    @apply font-bold leading-normal;
+    @apply font-bold leading-[1.75];
   }
 }
 
@@ -80,6 +117,6 @@ button {
     @apply flex justify-between items-center py-4;
   }
   .hero-vote-number {
-    @apply top-1/2 -translate-y-1/2 -mt-4
+    @apply top-1/2 -translate-y-1/2
   }
 }
